@@ -17,8 +17,10 @@ class App extends React.Component {
     })
   }
 
-  filter = (printType) => {
-    const newArr = this.state.bookList.filter((item) => item.volumeInfo.printType === printType);
+  filter = (e) => {
+    const newArr = this.state.bookList.filter((item) => item.volumeInfo.printType === e.currentTarget.value.toUpperCase());
+
+    console.log("inside filter",e.currentTarget.value.toUpperCase(),newArr)
     this.setState({booklist: newArr})
   }
 
@@ -27,7 +29,7 @@ class App extends React.Component {
       <div>
       <Header />
       <Search search={this.search} />
-      <Filter booklist={this.state.bookList} filter={this.filter}/>
+      <Filter  filter={this.filter}/>
       <Booklist booklist={this.state.bookList}/>
       </div>
     );

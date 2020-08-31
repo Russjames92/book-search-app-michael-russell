@@ -3,10 +3,10 @@ import React from 'react';
 function Filter(props) {
     return (
         <div className="filter-bar-container">
-            <select className="print-type">
+            <select onChange={(e) => props.filter(e)} className="print-type">
                 <option>All</option>
-                <option onChange={props.filter('BOOK')}>Book</option>
-                <option onChange={props.filter('MAGAZINE')}>Magazine</option>
+                <option >Book</option>              
+                <option >Magazine</option>
                 </select>
         </div>
     );
