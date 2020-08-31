@@ -3,6 +3,7 @@ import './App.css'
 import Header from './Header'
 import Search from './ToolBar/Search'
 import Filter from './ToolBar/Filter'
+import Booklist from './BookList/Booklist'
 
 class App extends React.Component {
   state = {
@@ -22,6 +23,7 @@ class App extends React.Component {
       <Header />
       <Search search={this.search} />
       <Filter />
+      <Booklist booklist={this.state.bookList}/>
       </div>
     );
   }
