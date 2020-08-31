@@ -15,14 +15,19 @@ class App extends React.Component {
     this.setState({
       bookList: books
     })
-  } 
+  }
+
+  filter = (printType) => {
+    const newArr = this.state.bookList.filter((item) => item.volumeInfo.printType === printType);
+    this.setState({booklist: newArr})
+  }
 
   render() {
     return (
       <div>
       <Header />
       <Search search={this.search} />
-      <Filter />
+      <Filter booklist={this.state.bookList} filter={this.filter}/>
       <Booklist booklist={this.state.bookList}/>
       </div>
     );
