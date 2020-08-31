@@ -5,3 +5,11 @@ header {
     text-align: center;
     font-size: 2rem;
 }
+.search-container{
+    background-color:gray;
+    text-align: center;
+    padding: 10px
+}
+button{
+    border-radius: 5px;
+}
